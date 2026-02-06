@@ -45,10 +45,12 @@ export default function OrderForm(props) {
     const classes = useStyles();
 
     return (
-        <div>
-            <Form>
-                {/* Left Column: Order details and Customer selection */}
-                <Grid item xs={6} >
+        <Form>
+            {/* THÊM GRID CONTAINER Ở ĐÂY */}
+            <Grid container>
+
+                {/* Left Column: Occupies 6/12 units of width */}
+                <Grid item xs={6}>
                     <Input
                         disabled
                         label="Order Number"
@@ -75,8 +77,8 @@ export default function OrderForm(props) {
                     />
                 </Grid>
 
-                {/* Right Column: Payment Method, Total, and Action Buttons */}
-                <Grid item xs={6} >
+                {/* Right Column: Occupies the other 6/12 units */}
+                <Grid item xs={6}>
                     <Select
                         label="Payment Method"
                         name="pMethod"
@@ -95,29 +97,30 @@ export default function OrderForm(props) {
                                 position="start">$</InputAdornment>,
                         }}
                     />
-                    {/* Action Buttons: Submit and Reset */}
-                    <ButtonGroup className={classes.submitButtonGroup}>
-                        <MuiButton
+
+                    {/* Action Buttons Group */}
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <ButtonGroup className={classes.submitButtonGroup}>
+                            <MuiButton
+                                size='large'
+                                endIcon={<RestaurantMenuIcon />}
+                                type='submit'
+                            >Submit</MuiButton>
+                            <MuiButton
+                                size='small'
+                                startIcon={<ReplayIcon />}
+                            />
+                        </ButtonGroup>
+
+                        <Button
                             size='large'
-                            endIcon={<RestaurantMenuIcon />}
-                            type='submit'
-                        >
-                            Submit
-                        </MuiButton>
-                        <MuiButton
-                            size='small'
-                            startIcon={<ReplayIcon />}
-                        />
-                    </ButtonGroup>
-                    {/* Secondary Action: View all orders */}
-                    <Button
-                        size='large'
-                        startIcon={<ReOrderIcon />}
-                    >
-                        Orders
-                    </Button>
+                            startIcon={<ReOrderIcon />}
+                            style={{ marginLeft: '8px' }} // Spacing between button groups
+                        >Orders</Button>
+                    </div>
                 </Grid>
-            </Form>
-        </div>
+
+            </Grid>
+        </Form>
     )
 }

@@ -7,7 +7,7 @@ const theme = createTheme();
 const useStyles = makeStyles(() => ({ // Bỏ tham số theme ở đây
     root: {
         '& .MuiFormControl-root': {
-            width: '80%',
+            width: '90%',
             margin: theme.spacing(1) // Bây giờ theme này đã có hàm spacing
         }
     }
