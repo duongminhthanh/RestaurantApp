@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/RestaurantApi/RestaurantApi/RestaurantApi/bin/Debug/net8.0
+/.vs
+/RestaurantApi/RestaurantApi/.vs
+/RestaurantApi/RestaurantApi/RestaurantApi/obj
+/RestaurantApi/RestaurantApi/RestaurantApi/WeatherForecast.cs
+/RestaurantApi/RestaurantApi/RestaurantApi/Controllers/WeatherForecastController.cs
